@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("../images/background-main.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+body h1 {
+    margin-top: 180px;
+    font-family: 'Alata', sans-serif;
+    font-weight: 700;
+    font-size: 55px;
+    color: #FFF;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+}
+
+body form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body h1, body form {
+    transition: transform 0.3s ease-in-out;
+}
+
+body form #searchInput {
+    margin-top: 25px;
+    margin-bottom: 30px;
+    width: 600px;
+    height: 45px;
+    box-shadow: 0 0 0 0;
+    border: 3px solid #46bce2;
+    outline: 0;
+    border-radius: 15px;
+    text-align: center;
+    font-family: 'Blinker', sans-serif;
+    font-size: 20px;
+}
+
+body form button {
+    background-color: #00C3FF;
+    border: solid 3px #FFF;
+    font-family: 'Blinker', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    padding: 12px 37px;
+    cursor: pointer;
+    color: #FFF;
+    width: 200px;
+    text-align: center;
+}
+
+body form button:hover {
+    transition: all .4s ease-in-out;
+    background-color: #FFF;
+    color: #00C3FF;
+}
+
+body .resultado {
+    opacity: 0; 
+    transform: translateY(20px); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 400px;
+    height: 350px;
+    background-color: rgba(0, 195, 255, 0.4);
+    border: 3px solid #FFF;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; 
+}
+
+body .resultado.mostrar {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+body .resultado .titulo {
+    font-family: 'Blinker', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #FFF;
+    margin-bottom: 25px;
+}
+
+body .resultado .info {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+body .resultado .info .vento {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body .resultado .info .temp {
+    margin-right: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+body .resultado .info .tempTitulo {
+    font-family: 'Blinker', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #FFF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+body .resultado .info .tempInfo {
+    font-family: 'Blinker', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #FFF;
+}
+
+body .resultado .info .tempInfo sup {
+    font-family: 'Blinker', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+body .resultado .info .vento .ventoInfo {
+    font-family: 'Blinker', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #FFF;
+}
+
+body .resultado .info .vento .ventoInfo span {
+    font-family: 'Blinker', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #FFF;
+}
+
+body .resultado .info .vento .ventoTitulo {
+    font-family: 'Blinker', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: #FFF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.ventoArea {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #FFF;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 20px;
+    padding-left: 25px;
+    padding-top: 25px;
+}
+
+.ventoPonto {
+    width: 25px;
+    height: 2px;
+    background-color: #FFF;
+    transform-origin: left;
+}
+
+.aviso {
+    margin-top: 10px;
+    font-family: 'Blinker', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    position: relative;
+    top: -370px;
+}
+
+footer {
+    font-family: 'Blinker', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    bottom: 0;
+    position: fixed;
+}
+
+/* Estilos para telas menores */
+@media (max-width: 768px) {
+    body h1 {
+        font-size: 40px;
+    }
+
+    body form #searchInput {
+        width: 300px;
+    }
+
+    body form button {
+        width: 150px;
+    }
+
+    .resultado {
+        width: 300px;
+        height: 250px;
+    }
+}
+
+/* Estilos para telas maiores */
+@media (min-width: 1200px) {
+    body h1 {
+        font-size: 70px;
+    }
+
+    body form #searchInput {
+        width: 800px;
+    }
+
+    body form button {
+        width: 300px;
+    }
+
+    .resultado {
+        width: 600px;
+        height: 500px;
+    }
+}
